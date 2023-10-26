@@ -1,5 +1,12 @@
 controllers:
-    resource:
-        path: ../src/Controller/
-        namespace: App\Controller
-    type: attribute
+  resource:
+    path: ../src/Controller/
+    namespace: App\Controller
+  type: attribute
+homepage:
+  path: /
+  controller: App\Controller\ObliczeniaController::index
+
+calculate:
+  path: /calculate
+  controller: App\Controller\ObliczeniaController::oblicz

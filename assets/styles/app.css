@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+}
+body {
+
+    background-color: #212121;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    color: white;
+}
+form{
+    background-color: #3a4042;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 30vw;
+    min-height: 20vh;
+    margin: 1vh;
+    padding: 1vh;
+}
+#button{
+    background-color: #8ecccc;
+    cursor: pointer;
+    border: solid 1px white;
+    min-width: 10vw;
+}
+#button:active{
+    transform: scale(0.9);
+}
+.input{
+    background-color: unset;
+    color: white;
+    cursor: pointer;
+    accent-color: white;
+    border: solid 1px white;
+}
+.input::-webkit-calendar-picker-indicator{
+    filter: invert(100%)
+}

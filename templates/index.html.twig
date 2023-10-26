@@ -1,0 +1,20 @@
+{% extends "base.html.twig" %}
+{% block body %}
+        <h1>Kalkulator godzin pracy</h1>
+    <form method="post" action="{{ path('oblicz') }}">
+        <div><label for="godzinaRozpoczecia">Godzina rozpoczęcia: </label>
+        <input type="time" name="godzinaRozpoczecia" id="godzinaRozpoczecia" class="input" value="{% if godzinaRozpoczecia is defined %}{{godzinaRozpoczecia}}{% else %}00:00{% endif %}" required></div>
+        <br>
+        <div><label for="godzinaZakonczenia">Godzina zakończenia: </label>
+        <input type="time" name="godzinaZakonczenia" id="godzinaZakonczenia" class="input" value="{% if godzinaZakonczenia is defined %}{{godzinaZakonczenia}}{% else %}00:00{% endif %}" required></div>
+        <br>
+        <input type="submit" id="button" value="Oblicz">
+    </form>
+    {% if roznicaGodzin is defined and roznicaMinut is defined and roznicaMinut < 10 %}
+        <p>Czas pracy wyniósł {{roznicaGodzin}}h 0{{roznicaMinut}}min</p>
+    {% elseif roznicaGodzin is defined and roznicaMinut is defined and roznicaMinut => 10 %}
+        <p>Czas pracy wyniósł {{roznicaGodzin}}h {{roznicaMinut}}min</p>
+    {% else %}
+        <p>Czas pracy wyniósł --:--</p>
+    {% endif %}
+{% endblock %}
